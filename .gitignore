@@ -1,0 +1,9 @@
+sdkconfig
+sdkconfig.old
+build
+cmake-build-debug
+CMakeFiles
+managed_components
+components/espressif__esp-idf-cxx
+
+.idea

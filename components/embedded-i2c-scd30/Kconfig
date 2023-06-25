@@ -1,0 +1,22 @@
+menu "SCD30"
+
+    orsource "$IDF_PATH/examples/common_components/env_caps/$IDF_TARGET/Kconfig.env_caps"
+
+    config SCD30_SDA_PIN
+        int "SDA pin"
+        range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
+        default 44
+
+    config SCD30_SCL_PIN
+        int "SCL pin"
+        range ENV_GPIO_RANGE_MIN ENV_GPIO_OUT_RANGE_MAX
+        default 43
+
+    config SCD30_CLK_SPEED
+        int "I2C clock speed"
+        default 100000
+
+    config SCD30_TIMEOUT
+        int "I2C timeout in ms"
+        default 100
+endmenu
