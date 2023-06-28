@@ -10,6 +10,8 @@
 #include "gpio_cxx.hpp"
 #include "i2c_cxx.hpp"
 
+// Note that the following code doesn't contain logic to free memory as it's not
+// supposed to ever be needed for this usecase
 namespace {
 
 // should be at least ~10% of screen height
@@ -24,6 +26,7 @@ lv_disp_draw_buf_t lvDispBuf;
 lv_disp_drv_t lvDispDrv;
 lv_indev_drv_t lvTouchDrv;
 
+// All interrupt callbacks must be stored in IRAM using the macro
 void IRAM_ATTR onLVGLTickTimer() {
   lv_tick_inc(LVGL_TICK_PERIOD_MS);
 }
